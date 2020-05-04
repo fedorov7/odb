@@ -21,4 +21,4 @@ LABEL summary="ODB: C++ Object-Relational Mapping (ORM) in Docker"
 LABEL version="2.5.0"
 
 # Install buildable executables
-COPY --from=builder /install /usr/local
+COPY --from=builder /install /usr
