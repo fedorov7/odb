@@ -1,8 +1,6 @@
-FROM fedorov7/build2 as builder
+FROM fedorov7/build2:gcc-9.3 as builder
 
 ARG PACKAGE="https://pkg.cppget.org/1/beta"
-
-RUN apk add --no-cache gmp-dev
 
 RUN mkdir /install \
  && mkdir /build \
@@ -18,7 +16,7 @@ RUN mkdir /install \
  && rm -r /install/share \
  && rm -r /build
 
-FROM fedorov7/gcc
+FROM gcc:9.3
 
 LABEL maintainer="Alexander Fedorov <fedorov7@gmail.com>"
 LABEL name="odb"
